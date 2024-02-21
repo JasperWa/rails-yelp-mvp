@@ -7,3 +7,24 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require 'faker'
+require_relative '../app/models/restaurant'
+
+puts 'Cleaning database...'
+Restaurant.destroy_all
+
+nr_of_restaurants = 5
+categories = %w[chinese italian japanese french belgian]
+
+puts 'Creating restaurants...'
+nr_of_restaurants.times do |_|
+  name = Faker::Restaurant.name
+  address = "#{Faker::Address.street_address}, #{Faker::Address.city}"
+  category = categories.sample
+  restaurant = Restaurant.new(name:, address:, category:)
+  restaurant.save
+  puts "Created #{name}"
+end
+
+puts 'Finished seed!'

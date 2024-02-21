@@ -1,0 +1,10 @@
+<div id="restaurant" class="col-4">
+  <h2> <%= restaurant.name %> </h2>
+  <div class="restaurant-details">
+  <p> <strong>Address:</strong> <%= restaurant.address %> </p>
+  <p> <strong>Cuisine:</strong> <%= restaurant.category.capitalize %> </p>
+  <% if current_page?(restaurants_path) %>
+    <p> <%= link_to "Show this restaurant", restaurant %> </p>
+  <% end %>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="container m-3 p-0">
+  <h1 class="fs-2">Restaurant</h1>
+  <%= render 'restaurant', restaurant: @restaurant %>
+  <h1 class="fs-3">Reviews</h1>
+  <% if !@reviews.empty? %>
+    <%= render 'reviews/list', reviews: @reviews %>
+  <% else %>
+    <p>No reviews yet...</p>
+  <% end %>
+</div>
