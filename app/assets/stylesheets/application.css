@@ -55,3 +55,7 @@ p {
 .review-details {
   margin-left: 6px;
 }
+
+#new-review {
+  width: 50%;
+}
